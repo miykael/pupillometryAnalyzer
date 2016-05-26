@@ -1,23 +1,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-% Author: Michael Notter, January 2016, email: michaelnotter@hotmail.com
+% Author: Michael Notter, May 2016, email: michaelnotter@hotmail.com
 
 % Path to the project folder
-experimentPath='U:\PUPSEO\analyse\';
+experimentPath='C:\PupilloMetryData\';
 
 % Path to the folder containing the WKS-files, relative to the project folder
-wksfilepath=[experimentPath,'Puoillometrie\BaR pupillo\'];
+wksfilepath=[experimentPath,'WKS_Subject001\'];
 
 % If you use octave, than you need to load the sgolayfilt function from the signal packege,
 % or add the path to the signal package folder
-addpath([experimentPath,'scripts\signal_package'])
+if  exist('OCTAVE_VERSION', 'builtin') ~= 0
+    addpath([experimentPath,'scripts\sgolay_functions'])
+end
 
 %%%
 % Script relevant variables
 refreshrate = 60.0;         % Sampling rate of the eye tracker [Hz]
 preinterval=250.0;          % time interval to consider before stimulation [ms]
-postinterval=7000.0;        % time interval to consider after stimulation [ms]
+postinterval=5000.0;        % time interval to consider after stimulation [ms]
 pupilSpeedThreshold = .04;  % maximal possible pupil dilation between timepoints [in percentage]
-noBlinkingWindow = 3;       % number of consecutive sampling points where no blinking should occure
+noBlinkingWindow = 15;      % number of consecutive sampling points where no blinking should occure
 stdDropMultiplier = 2;      % how many standard deviations has a value to be below the baseline to count as the drop point
 recoveryTime = 6000.0;      % time point of relevant recovery point
 sgolayOrder = 3;            % Savitzky-Golay Filter: order of the polynom
@@ -27,10 +29,10 @@ sgolayWindow = 15;          % Savitzky-Golay Filter: length of window to conside
 % Condition relevant variables
 
 % Condition Names: First value is file specific identifier, rest of array are condition names
-conditions.con1.name = {'_rod_','-4 blue','-3.5 blue','-3 blue','-2.5 blue','-2 blue','-1.5 blue'};
-conditions.con2.name = {'_cone_','0 red', '1 red', '1.5 red','2 red','2.5 red'};
-conditions.con3.name = {'_melanopsin_O','1 blue','1.5 blue','2 blue'};
-conditions.con4.name = {'_melanopsin_binoc','2.3 red','2.3 blue'};
+conditions.con1.name = {'_session1_','cond01','cond02','cond03','cond04','cond05','cond06'};
+conditions.con2.name = {'_session2_','cond01','cond02','cond03','cond04','cond05'};
+conditions.con3.name = {'_session3_','cond01','cond02','cond03'};
+conditions.con4.name = {'_session4_','cond01','cond02'};
 
 % Condition ID: The step number specifies which protocol step represents a flash / stimulation
 conditions.con1.step = [2, 4, 6, 8, 10, 12];
