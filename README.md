@@ -10,9 +10,10 @@ All the things you need to change so that the script runs according your case sh
 **First**, make sure that you set `experimentPath` to the parent folder of your experiment (Don't forget the '\' at the end of the path) and specify the path to the wks-files with `wksfilepath`.
 
 **Second**, adapt all script relevant variables between line 18-26.
-    * `pupilSpeedThreshold` and `noBlinkingWindow` are needed to detect and correct for eye blinks. They work as follows: As soon as a timepoint to timepoint pupil dilation differec more than 4% (according to `pupilSpeedThreshold`), than it is seen as an eyeblink. The end of the eyeblink period is seen as the last eyeblink point after which there are no eyeblink points for 15 timepoints (according to `noBlinkingWindow`).
-    * The "Droppoint" of the event timecourse is divined as the point where the timecourse falls for more than 5 pre-interval duration (e.g. 250ms x 5 = 1250ms) below 2 x Standard Deviation (according `stdDropMultiplier`) of the pre-stimuli timecourse.
-    * `recoveryTime` specifies the timepoint from which amplitude information should be read out and saved into the output xls-file
+
+* `pupilSpeedThreshold` and `noBlinkingWindow` are needed to detect and correct for eye blinks. They work as follows: As soon as a timepoint to timepoint pupil dilation differec more than 4% (according to `pupilSpeedThreshold`), than it is seen as an eyeblink. The end of the eyeblink period is seen as the last eyeblink point after which there are no eyeblink points for 15 timepoints (according to `noBlinkingWindow`).
+* The "Droppoint" of the event timecourse is divined as the point where the timecourse falls for more than 5 pre-interval duration (e.g. 250ms x 5 = 1250ms) below 2 x Standard Deviation (according `stdDropMultiplier`) of the pre-stimuli timecourse.
+* `recoveryTime` specifies the timepoint from which amplitude information should be read out and saved into the output xls-file
 
 **Third**, change the `conditions` variable according your conditions. The first string in `conditions.con1.name` specifies the filename string which defines the condition, followed by the individual names of the conditions. The `conditions.con1.step` array specifies which markers of all recorded markers should be considered as relevant.
 
