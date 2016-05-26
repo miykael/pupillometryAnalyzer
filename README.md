@@ -5,54 +5,16 @@ This script runs on MATLAB or [Octave](https://www.gnu.org/software/octave/). If
 
 # What do you need to know to start
 
+All the things you need to change so that the script runs according your case should be within the first 45 lines.
 
+**First**, make sure that you set `experimentPath` to the parent folder of your experiment (Don't forget the '\' at the end of the path) and specify the path to the wks-files with `wksfilepath`.
 
+**Second**, adapt all script relevant variables between line 18-26.
+    * `pupilSpeedThreshold` and `noBlinkingWindow` are needed to detect and correct for eye blinks. They work as follows: As soon as a timepoint to timepoint pupil dilation differec more than 4% (according to `pupilSpeedThreshold`), than it is seen as an eyeblink. The end of the eyeblink period is seen as the last eyeblink point after which there are no eyeblink points for 15 timepoints (according to `noBlinkingWindow`).
+    * The "Droppoint" of the event timecourse is divined as the point where the timecourse falls for more than 5 pre-interval duration (e.g. 250ms x 5 = 1250ms) below 2 x Standard Deviation (according `stdDropMultiplier`) of the pre-stimuli timecourse.
+    * `recoveryTime` specifies the timepoint from which amplitude information should be read out and saved into the output xls-file
 
-
-
-
-
-%%%
-% Script relevant variables
-refreshrate = 60.0;         % Sampling rate of the eye tracker [Hz]
-preinterval=250.0;          % time interval to consider before stimulation [ms]
-postinterval=5000.0;        % time interval to consider after stimulation [ms]
-pupilSpeedThreshold = .04;  % maximal possible pupil dilation between timepoints [in percentage]
-noBlinkingWindow = 15;      % number of consecutive sampling points where no blinking should occure
-stdDropMultiplier = 2;      % how many standard deviations has a value to be below the baseline to count as the drop point
-recoveryTime = 6000.0;      % time point of relevant recovery point
-sgolayOrder = 3;            % Savitzky-Golay Filter: order of the polynom
-sgolayWindow = 15;          % Savitzky-Golay Filter: length of window to consider (in sampling points)
-
-%%%
-% Condition relevant variables
-
-% Condition Names: First value is file specific identifier, rest of array are condition names
-conditions.con1.name = {'_session1_','cond01','cond02','cond03','cond04','cond05','cond06'};
-conditions.con2.name = {'_session2_','cond01','cond02','cond03','cond04','cond05'};
-conditions.con3.name = {'_session3_','cond01','cond02','cond03'};
-conditions.con4.name = {'_session4_','cond01','cond02'};
-
-% Condition ID: The step number specifies which protocol step represents a flash / stimulation
-conditions.con1.step = [2, 4, 6, 8, 10, 12];
-conditions.con2.step = [3, 5, 7, 9, 11];
-conditions.con3.step = [2, 4, 6];
-conditions.con4.step = [2, 4];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Third**, change the `conditions` variable according your conditions. The first string in `conditions.con1.name` specifies the filename string which defines the condition, followed by the individual names of the conditions. The `conditions.con1.step` array specifies which markers of all recorded markers should be considered as relevant.
 
 
 # How does the script work
