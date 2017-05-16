@@ -17,7 +17,7 @@ end
 % Script relevant variables
 refreshrate = 60.0;         % Sampling rate of the eye tracker [Hz]
 preinterval=250.0;          % time interval to consider before stimulation [ms]
-postinterval=5000.0;        % time interval to consider after stimulation [ms]
+postinterval=7000.0;        % time interval to consider after stimulation [ms]
 pupilSpeedThreshold = .04;  % maximal possible pupil dilation between timepoints [in percentage]
 noBlinkingWindow = 15;      % number of consecutive sampling points where no blinking should occure
 stdDropMultiplier = 2;      % how many standard deviations has a value to be below the baseline to count as the drop point
@@ -150,7 +150,7 @@ for f=1:numel(file_id)
         end
     end
 
-    % Only keep the values for the flash    
+    % Only keep the values for the flash
     flash_onset = output.stimuli_onset(step);
 
     % Plot overview figures
@@ -257,7 +257,7 @@ for f=1:numel(file_id)
                 interpolStart = interpolStart(1:end-1);
             end
             interpolStep = interpolStop-interpolStart;
-            
+
             for j=1:length(interpolStep)
                 startID = interpolStart(j);
                 stopID = interpolStop(j);
