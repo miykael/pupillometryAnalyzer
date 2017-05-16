@@ -1,23 +1,18 @@
-=====================
-Pupillometry Analyzer
-=====================
+# Pupillometry Analyzer
 
 This short script can be used to analyse pupillometry raw data saved in a wks-file. It analyzes the timeseries and creates informative figures and saves all relevant information for further analysis in xls-files.
 
 This script runs on MATLAB or [Octave](https://www.gnu.org/software/octave/). If you use Octave, than you also need the folder `sgolay_functions` under https://github.com/miykael/pupillometryAnalyzer.
 
 
-Citation
---------
+# Citation
 
-.. image:: https://zenodo.org/badge/doi/10.5281/zenodo.580285.svg
-   :target: http://doi.org/10.5281/zenodo.580285
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.580285.svg)](https://doi.org/10.5281/zenodo.580285)
 
-If you used Pupillometry Analyzer in your project, please cite as: Notter, Michael Philipp. (2017). Pupillometry Analyzer: a lightweight matlab tool to pre-process pupillometry data [Data set]. Zenodo. `http://doi.org/10.5281/zenodo.580285 <http://doi.org/10.5281/zenodo.580285>`_.
+If you used Pupillometry Analyzer in your project, please cite as: Notter, Michael Philipp. (2017). Pupillometry Analyzer: a lightweight matlab tool to pre-process pupillometry data [Data set]. Zenodo. [http://doi.org/10.5281/zenodo.580285](http://doi.org/10.5281/zenodo.580285).
 
 
-How does the script work?
--------------------------
+# How does the script work?
 
 **First**, it reads the WKS-file and reads out relevant information such as pupil width and marker onset.
 
@@ -41,8 +36,7 @@ How does the script work?
 <img src="static/xls_output.png">
 
 
-What do you need to know to start?
-----------------------------------
+# What do you need to know to start?
 
 All the things you need to change so that the script runs according your case should be within the first 45 lines.
 
