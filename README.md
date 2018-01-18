@@ -7,9 +7,9 @@ This script runs on MATLAB or [Octave](https://www.gnu.org/software/octave/). If
 
 # Citation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.580285.svg)](https://doi.org/10.5281/zenodo.580285)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.592386.svg)](https://doi.org/10.5281/zenodo.592386)
 
-If you used Pupillometry Analyzer in your project, please cite as: Notter, Michael P., & Murray, Micah M. (2017). Pupillometry Analyzer: a lightweight matlab tool to pre-process pupillometry data. Zenodo. [http://doi.org/10.5281/zenodo.580285](http://doi.org/10.5281/zenodo.580285).
+If you used Pupillometry Analyzer in your project, please cite as: Notter, Michael P., & Murray, Micah M. (2017). Pupillometry Analyzer: a lightweight matlab tool to pre-process pupillometry data. Zenodo. [http://doi.org/10.5281/zenodo.592386](http://doi.org/10.5281/zenodo.592386).
 
 
 # How does the script work?
