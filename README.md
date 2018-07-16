@@ -1,5 +1,13 @@
 # Pupillometry Analyzer
 
+[![GitHub issues](https://img.shields.io/github/issues/miykael/pupillometryAnalyzer.svg)](https://github.com/miykael/pupillometryAnalyzer/issues/)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/miykael/pupillometryAnalyzer.svg)](https://github.com/miykael/pupillometryAnalyzer/pulls/)
+[![GitHub contributors](https://img.shields.io/github/contributors/miykael/pupillometryAnalyzer.svg)](https://GitHub.com/miykael/pupillometryAnalyzer/graphs/contributors/)
+[![GitHub Commits](https://github-basic-badges.herokuapp.com/commits/miykael/pupillometryAnalyzer.svg)](https://github.com/miykael/pupillometryAnalyzer/commits/master)
+[![GitHub size](https://github-size-badge.herokuapp.com/miykael/pupillometryAnalyzer.svg)](https://github.com/miykael/pupillometryAnalyzer/archive/master.zip)
+[![GitHub HitCount](http://hits.dwyl.io/miykael/pupillometryAnalyzer.svg)](http://hits.dwyl.io/miykael/pupillometryAnalyzer)
+
+
 This short script can be used to analyse pupillometry raw data saved in a wks-file. It analyzes the timeseries and creates informative figures and saves all relevant information for further analysis in xls-files.
 
 This script runs on MATLAB or [Octave](https://www.gnu.org/software/octave/). If you use Octave, than you also need the folder `sgolay_functions` under https://github.com/miykael/pupillometryAnalyzer.
